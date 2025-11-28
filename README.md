@@ -100,6 +100,8 @@ column_n data_type constraints
    PRIMARY KEY ( tutorial_id )
  );
 ```
+Kindly refer to the day1.sql file for the required details
+
 ### Here, a few items need an explanation 
 - Field Attribute NOT NULL is being used because we do not want this field to be NULL. So, if a user tries to 
 create a record with a NULL value, then MySQL will raise an error.
