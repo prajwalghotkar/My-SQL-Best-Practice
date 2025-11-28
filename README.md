@@ -80,16 +80,18 @@ drop database Sales;
    - Definitions for each field
  
  ##### Syntax
+ ```
  CREATE TABLE if not exists table_name 
 (
 column_1 data_type constraints, 
 column_2 data_type constraints, … 
 column_n data_type constraints 
 );
-
+```
 - ***Compulsory requirement:*** Add at least one column
 
  # Create Table- Example
+```
  create table tutorials_tbl(
    tutorial_id INT NOT NULL AUTO_INCREMENT,
    tutorial_title VARCHAR(100) NOT NULL,
@@ -97,7 +99,7 @@ column_n data_type constraints
    submission_date DATE,
    PRIMARY KEY ( tutorial_id )
  );
-
+```
 ### Here, a few items need an explanation 
 - Field Attribute NOT NULL is being used because we do not want this field to be NULL. So, if a user tries to 
 create a record with a NULL value, then MySQL will raise an error.
