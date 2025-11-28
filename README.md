@@ -59,7 +59,7 @@ drop database Sales;
 - Click the information symbol next to the database, it opens the database details in different tabs such as info, Tables, Columns, Indexes  etc
 <img width="1359" height="406" alt="Screenshot 2025-11-28 084244" src="https://github.com/user-attachments/assets/2e9b26da-8dee-4506-bc13-07b7ea1450bf" />
 
-- To use or activate the database use the command   **use sales**
+- To use or activate the database use the command ---->  **use sales**
 
 ---
 # MySQL Data Types
