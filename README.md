@@ -72,6 +72,14 @@ drop database Sales;
 - Its values can be indexed or not.
 - How MySQL performs a comparison of values of a particular data type.
 
+<img width="1799" height="830" alt="Screenshot 2025-11-28 084609" src="https://github.com/user-attachments/assets/6ecf2070-a395-4377-85ff-0e047fc4998e" />
+<img width="1806" height="843" alt="Screenshot 2025-11-28 084645" src="https://github.com/user-attachments/assets/c33babd2-3828-4165-b3dc-33e2d5b3bd59" />
+<img width="1768" height="755" alt="Screenshot 2025-11-28 084712" src="https://github.com/user-attachments/assets/f52b9236-54a0-45ed-92f3-4fe6f9ccdc45" />
+<img width="1816" height="861" alt="Screenshot 2025-11-28 084741" src="https://github.com/user-attachments/assets/2a5f1cfb-1ba0-4451-a0f7-512b7c7b8c2c" />
+<img width="1741" height="834" alt="Screenshot 2025-11-28 084807" src="https://github.com/user-attachments/assets/f1db8fb2-6d56-4a60-832e-96895610bbaa" />
+<img width="887" height="327" alt="Screenshot 2025-11-28 084846" src="https://github.com/user-attachments/assets/141a97e1-a3cc-4d81-9656-6c84df7d93bb" />
+<img width="1699" height="340" alt="Screenshot 2025-11-28 084900" src="https://github.com/user-attachments/assets/23d0ddac-74f1-46ba-beda-486c0d4e5bcd" />
+
 ---
  # Create Table
  - To begin with, the table creation command requires the following details −
@@ -100,6 +108,7 @@ column_n data_type constraints
    PRIMARY KEY ( tutorial_id )
  );
 ```
+
 Kindly refer to the day1.sql file for the required details
 
 ### Here, a few items need an explanation 
