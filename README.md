@@ -175,7 +175,7 @@ DROP CONSTRAINT CK_tblPerson_Age
 ```
 
 ##### In simple way before it inserting data check constraint check whether if it is following condition satisfy or not.
-- Please refer to the CHECK file for better understanding.
+- Please refer to the CHECK_CONSTRAINT.sql file for better understanding. ()
 
 
   
