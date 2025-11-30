@@ -133,6 +133,49 @@ database on which you are working, or, alternatively, to insert, update, or dele
 - DROP TABLE table_name;
 ##### Example 
 - DROP TABLE sales
-  
+
+---
+
+#  Constraints
+
+- Constraints are used to limit the type of data that can go into a table. This ensures the accuracy and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted. 
+
+##### Constraints can be column level or table level.
+###### Types of MySQL Constraints
+###### Constraints in MySQL is classified into two types:
+- Column Level Constraints: These constraints are applied only to the single column that limits the 
+type of particular column data.
+- Table Level Constraints: These constraints are applied to the entire table and limits the type of 
+data for the whole table.
+
+<img width="1275" height="702" alt="Screenshot 2025-11-30 104313" src="https://github.com/user-attachments/assets/f281f42c-3616-4287-ade0-c638a9cf87d7" />
+<img width="1145" height="613" alt="Screenshot 2025-11-30 104336" src="https://github.com/user-attachments/assets/fbbbbbe7-9d44-4ae5-8fe8-6c6edb57fb86" />
+
+---
+
+# Not Null Constraint
+
+- The NOT NULL constraint enforces a column to NOT accept NULL values. 
+- This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field
+
+## Please refer to the NOT_NULL file for better understanding.
+---
+#  Check Constraint
+
+- CHECK Constraint is used limit the range of the values, that can be entered for a column.
+##### The general formula for adding check constarint in SQL Server.
+```
+ALTER TABLE {TABLE_NAME}
+ADD CONSTRAINT {CONSTRAINT_NAME} CHECK (BOOLEAN_EXPERSSION)
+```
+##### To drop the CHECK constraint:
+```
+ALTER TABLE tblPerson
+DROP CONSTRAINT CK_tblPerson_Age
+```
+
+##### In simple way before it inserting data check constraint check whether if it is following condition satisfy or not.
+- Please refer to the CHECK file for better understanding.
+
 
   
