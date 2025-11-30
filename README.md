@@ -175,7 +175,8 @@ DROP CONSTRAINT CK_tblPerson_Age
 ```
 
 ##### In simple way before it inserting data check constraint check whether if it is following condition satisfy or not.
-- Please refer to the CHECK_CONSTRAINT.sql file for better understanding. (https://github.com/prajwalghotkar/My-SQL-Best-Practice/blob/main/CHECK_CONSTRAINT.sql)
+
+## Please refer to the CHECK_CONSTRAINT.sql file for better understanding. (https://github.com/prajwalghotkar/My-SQL-Best-Practice/blob/main/CHECK_CONSTRAINT.sql)
 
 
   
