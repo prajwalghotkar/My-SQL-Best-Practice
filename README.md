@@ -153,14 +153,14 @@ data for the whole table.
 
 ---
 
-# Not Null Constraint
+# NOT NULL Constraint
 
 - The NOT NULL constraint enforces a column to NOT accept NULL values. 
 - This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field
 
 - Please refer to the NOT_NULL file for better understanding.
 ---
-#  Check Constraint
+#  CHECK Constraint
 
 - CHECK Constraint is used limit the range of the values, that can be entered for a column.
 ##### The general formula for adding check constarint in SQL Server.
@@ -178,5 +178,24 @@ DROP CONSTRAINT CK_tblPerson_Age
 
 - Please refer to the CHECK_CONSTRAINT.sql file for better understanding. 
 
+---
 
-  
+# UNIQUE constraint
+
+- Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+- A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+- However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+
+ - Please refer to the UNIQUE_CONSTRAINT.sql file for better understanding.
+
+ ---
+
+ # PRIMARY KEY constraint
+
+- Primary Key is used to identify each recor in a table uniquely.alter
+- If the column constraint primary key constraints, then it cannot be null or empty.
+- A table may have duplicate columns, but it can contain only one primary key.
+- It always contains a unique value in a column.
+
+- Please refer to the PRIMARY_KEY_CONSTRAINT.sql file for better understanding.
+
