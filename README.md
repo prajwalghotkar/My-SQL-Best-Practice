@@ -221,13 +221,18 @@ FOREIGN KEY (column_name_2) REFERENCES table_name_2(column_name_2)
 ```
 **Parameters:**
 - CREATE TABLE table_name_1: This statement is used to create a new database table.
+
 - column_name_1,column_name_2,....: Specify the name columns you want to create on the table.
+
 - datatype: Specify the datatype of each column in the table.
+
 - PRIMARY KEY (column_name_1): Specify the column name on which the primary key constraint has to be applied. it should be a NOT NULL column.
+
 - FOREGIN KEY (column_name_2): Specify the column name on which foregin key constraint has to be applied.
+
 - REFERENCES table_name_2(column_name_2): Specify the table name and the column on which the foregin key in the first table is linked.
 
-one more topic what exact ON DELETE CASCADE---> IF the customer_id delete from the parent table which means customer table and if that customer_id use there is sales table as well the corresponding customer_id need to be deleted.
+- one more topic what exact ON DELETE CASCADE---> IF the customer_id delete from the parent table which means customer table and if that customer_id use there is sales table as well the corresponding customer_id need to be deleted.
 
 #### Drop Foreign Key
 
