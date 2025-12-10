@@ -199,3 +199,42 @@ DROP CONSTRAINT CK_tblPerson_Age
 
 - Please refer to the PRIMARY_KEY_CONSTRAINT.sql file for better understanding.
 
+---
+
+# FOREIGN KEY constraint
+
+- Foreign Key constraint is used to link two tables together.It is also known as the referencing key.
+- A foregin key column matches the primary key field of another table. It means a foreign key field in one table refers to the primary key field of another table.
+- Syntax:
+```
+CREATE TABLE table_name_1
+(
+column_name_1 datatype NOT NULL,
+column_name_2 datatype NOT NULL,
+.
+.
+.
+column_name_n datatype NOT NULL
+PRIMARY KEY (column_name_1)
+FOREIGN KEY (column_name_2) REFERENCES table_name_2(column_name_2)
+);
+```
+**Parameters:**
+- CREATE TABLE table_name_1: This statement is used to create a new database table.
+- column_name_1,column_name_2,....: Specify the name columns you want to create on the table.
+- datatype: Specify the datatype of each column in the table.
+- PRIMARY KEY (column_name_1): Specify the column name on which the primary key constraint has to be applied. it should be a NOT NULL column.
+- FOREGIN KEY (column_name_2): Specify the column name on which foregin key constraint has to be applied.
+- REFERENCES table_name_2(column_name_2): Specify the table name and the column on which the foregin key in the first table is linked.
+
+one more topic what exact ON DELETE CASCADE---> IF the customer_id delete from the parent table which means customer table and if that customer_id use there is sales table as well the corresponding customer_id need to be deleted.
+
+#### Drop Foreign Key
+
+- Click the 'i' button Next to the Table name, Click the DDL tab, and get the Foreign Key name. Use the Alter command to Drop the Foreign Key
+```
+ALTER TABLE TABLE_NAME DROP FOREIGN KEY sales_ibfk_1(FR_KEY_NAME);
+```
+<img width="1704" height="1008" alt="Screenshot 2025-12-10 181332" src="https://github.com/user-attachments/assets/ec4d4297-21b4-4a0d-824e-ed70c41c6f89" />
+
+- Please refer to the FOREIGN_KEY_CONSTRAINT.sql file for better understanding.
