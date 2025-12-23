@@ -297,10 +297,15 @@ C:\Users\pmgho\OneDrive\Documents\SQL_Prac
 loaded without any issues
 
 **SELECT COUNT(*) FROM departments;**
+
 **SELECT COUNT(*) FROM dept_emp;**
+
 **SELECT COUNT(*) FROM dept_manager;**
+
 **SELECT COUNT(*) FROM employees;**
+
 **SELECT COUNT(*) FROM salaries;**
+
 **SELECT COUNT(*) FROM titles;**
 
 - Please refer to the **employees_database_prajwal_pract.sql** file for better understanding.
