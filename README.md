@@ -243,3 +243,64 @@ ALTER TABLE TABLE_NAME DROP FOREIGN KEY sales_ibfk_1(FR_KEY_NAME);
 <img width="1704" height="1008" alt="Screenshot 2025-12-10 181332" src="https://github.com/user-attachments/assets/ec4d4297-21b4-4a0d-824e-ed70c41c6f89" />
 
 - Please refer to the FOREIGN_KEY_CONSTRAINT.sql file for better understanding.
+---
+# MySQL Best Practice with Prajwal😊
+- **Clean Code:** Code that is focused and understandable, which means it must be readable, logical, and changeable
+- **Good code is not the one computers understand; it is the one humans can understand.**
+- Code, in general, can be organized in several ways. Good practice implies you will choose the version that will be easiest to read and understand 
+
+#### Assumption: 
+- At your workplace, you will always type code cleanly – as simple as possible, perfectly organized, maintaining a steady logical flow
+- When assigning names to variables or SQL objects, always choose shorter, meaningful names, convey specific information 
+- Pronounceable, where one word per concept has been picked 
+- Names will constitute more than 80% of your code
+- Use ad-hoc software that re-organizes code and colours different words consistently 
+- Use the relevant analogical tool provided in Workbench
+- Intervene manually and adjust your code as you like 
+
+#### Comments 
+- Lines of text that Workbench will not run as code; they convey a message to someone who reads our code 
+```
+/* … */ (for large comments)
+
+# or -- (for one-line comments)
+```
+----
+# Create Database:
+#### **Database: employees**
+<img width="1344" height="797" alt="Screenshot 2025-12-23 190421" src="https://github.com/user-attachments/assets/d0c38547-14b0-4af2-b0fe-c9e60ee74cfc" />
+
+#### **Load Employee Data Base**
+- File -> Open SQL Script
+- Then Choose the  employee file at the location
+```
+C:\Users\pmgho\OneDrive\Documents\SQL_Prac
+```
+- Then Click Open
+<img width="410" height="546" alt="Screenshot 2025-12-23 191134" src="https://github.com/user-attachments/assets/2a8e1db6-b072-4b9b-b4b4-ff99fb64bc8e" />
+<img width="1920" height="1080" alt="Screenshot 2025-12-23 191155" src="https://github.com/user-attachments/assets/901c8ded-4d8c-4512-a02b-bd06c933c07a" />
+
+
+#### **Execute the Script**
+- Execute the Script by clicking execute Button
+<img width="1537" height="779" alt="Screenshot 2025-12-23 191454" src="https://github.com/user-attachments/assets/98c6b92f-b269-4620-9041-4578c42ea439" />
+
+
+#### **View Schema and tables**
+- Click the schema Refresh Button  to refresh the schema
+- Employee schema is displayed with the following tables
+<img width="581" height="640" alt="Screenshot 2025-12-23 193635" src="https://github.com/user-attachments/assets/0dd59381-255f-488e-97e8-7192210ade9d" />
+
+
+#### ** Display Record Count**
+- Use the following statement to view the record count against each table. This is to ensure table 
+loaded without any issues
+
+**SELECT COUNT(*) FROM departments;**
+**SELECT COUNT(*) FROM dept_emp;**
+**SELECT COUNT(*) FROM dept_manager;**
+**SELECT COUNT(*) FROM employees;**
+**SELECT COUNT(*) FROM salaries;**
+**SELECT COUNT(*) FROM titles;**
+
+- Please refer to the **employees_database_prajwal_pract.sql** file for better understanding.
