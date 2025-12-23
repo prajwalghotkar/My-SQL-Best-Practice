@@ -292,15 +292,15 @@ C:\Users\pmgho\OneDrive\Documents\SQL_Prac
 <img width="581" height="640" alt="Screenshot 2025-12-23 193635" src="https://github.com/user-attachments/assets/0dd59381-255f-488e-97e8-7192210ade9d" />
 
 
-#### ** Display Record Count**
+#### Display Record Count
 - Use the following statement to view the record count against each table. This is to ensure table 
 loaded without any issues
 
-**SELECT COUNT(*) FROM departments;**
-**SELECT COUNT(*) FROM dept_emp;**
-**SELECT COUNT(*) FROM dept_manager;**
-**SELECT COUNT(*) FROM employees;**
-**SELECT COUNT(*) FROM salaries;**
-**SELECT COUNT(*) FROM titles;**
+- **SELECT COUNT(*) FROM departments;**
+- **SELECT COUNT(*) FROM dept_emp;**
+- **SELECT COUNT(*) FROM dept_manager;**
+- **SELECT COUNT(*) FROM employees;**
+- **SELECT COUNT(*) FROM salaries;**
+- **SELECT COUNT(*) FROM titles;**
 
 - Please refer to the **employees_database_prajwal_pract.sql** file for better understanding.
