@@ -459,20 +459,24 @@ SELECT * FROM employees WHERE hire_date LIKE ('%2000%’);
 SELECT * FROM employees WHERE  emp_no LIKE ('1000_');
 ```
 ---
+
 # WHERE-Wildcard Characters
 **%**  a substitute for a sequence of characters
 - Eg - LIKE (‘Mar%’) – Result - Mark, Martin, Margaret
 
 **_**   helps you match a single character 
-LIKE (‘Mar_’)  - Result - Mark, Marv, Marl 
+- LIKE (‘Mar_’)  - Result - Mark, Marv, Marl 
 
 **'*'**  will deliver a list of all columns in a table. It can be used to count all rows of a table 
-Eg - SELECT * FROM employees;
+- Eg - SELECT * FROM employees;
 
 ---
+
 # WHERE-Between .. AND
 - The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+
 - The BETWEEN operator is inclusive: begin and end values are included
+
 ```
 Syntax
 SELECT column_name(s)
@@ -480,16 +484,19 @@ FROM table_name
 WHERE column_name BETWEEN value1 AND value2;
 ```
 ---
+
 # WHERE-IS NOT NULL /IS NULL
 - IS NULL /IS NOT NULL
   - It is not possible to test for NULL values with comparison operators, such as =, <, or <>.
   - We will have to use the IS NULL and IS NOT NULL operators instead.
 - IS NULL Syntax
+
 ```
 SELECT column_names
 FROM table_name
 WHERE column_name IS NULL;
 ```
+
 - IS NOT NULL Syntax
 ```
 SELECT column_names
@@ -497,8 +504,11 @@ FROM table_name
 WHERE column_name IS NOT NULL;
 ```
 ---
+
 # Other  Comparison Operators
+
 <img width="718" height="303" alt="Screenshot 2025-12-28 132539" src="https://github.com/user-attachments/assets/b34c5ec5-8d9d-4085-8ff5-cab9cda25e6d" />
+
 ```
 SELECT  * FROM employees WHERE first_name = 'Mark’;
 SELECT  * FROM employees WHERE first_name <> 'Mark’;
@@ -510,24 +520,30 @@ SELECT  * FROM employees WHERE hire_date <= '1985-02-01’;
 SELECT  * FROM employees WHERE hire_date >= '2000-01-01'  AND gender = 'F’;
 SELECT * FROM salaries WHERE salary > 150000;
 ```
+
 ---
 # Select – Distinct
+
 - The SELECT DISTINCT statement is used to return only distinct (different) values.
+
 ```
 SELECT DISTINCT column1, column2, ...
 FROM table_name;
 ```
+
 - Example
 ```
 select distinct Gender from employees; 
 SELECT DISTINCT hire_date FROM employees;
 ```
 ---
+
 # Aggregate Functions
 <img width="731" height="512" alt="Screenshot 2025-12-28 132807" src="https://github.com/user-attachments/assets/b63f1065-aa44-4473-af4a-6b6330a102e4" />
 <img width="703" height="495" alt="Screenshot 2025-12-28 132821" src="https://github.com/user-attachments/assets/2f7b10fa-556a-4d58-b7df-d9485ee6b5a3" />
 
 - Examples 
+
 ```
 select count(emp_no) from employees;
 select count(first_name) from employees; 
@@ -536,10 +552,13 @@ SELECT  COUNT(*) FROM salaries WHERE salary >= 100000;
 SELECT  COUNT(*) FROM dept_manager;
 ```
 ---
+
 # ORDER- BY
 
 - The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+
 - The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
 - Syntax 
 ```
 SELECT column1, column2, ...
@@ -547,6 +566,7 @@ FROM table_name
 ORDER BY column1, column2, ... ASC|DESC
 ```
 ---
+
 # GROUP- BY
 - **GROUP BY** When working in SQL, results can be grouped according to a specific field or fields 
 - **GROUP BY** - GROUP BY must be placed immediately after the WHERE conditions, if any, and just before the ORDER BY clause 
@@ -554,6 +574,7 @@ ORDER BY column1, column2, ... ASC|DESC
 
 - The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
 - The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
 ```
 SELECT column_name(s)
 FROM table_name
@@ -562,18 +583,20 @@ GROUP BY column_name(s)
 ORDER BY column_name(s);
 ```
 ---
+
 # Aliases (AS)
 - names_count is the aliase name 
 ```
 select first_name, count(first_name) as names_count from employees group by 
 first_name order by first_name  DESC; 
 
-SELECT salary, COUNT(emp_no) AS emps_with_same_salary FROM salaries WHERE  salary 
-> 80000 GROUP BY salary ORDER BY salary;
+SELECT salary, COUNT(emp_no) AS emps_with_same_salary FROM salaries WHERE  salary > 80000 GROUP BY salary ORDER BY salary;
 ```
 ---
+
 # Having
 - The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
 ```
 SELECT column_name(s)
 FROM table_name
@@ -582,16 +605,22 @@ GROUP BY column_name(s)
 HAVING condition
 ORDER BY column_name(s);
 ```
+
 #### Difference - WHERE and HAVING
+
 <img width="830" height="288" alt="Screenshot 2025-12-28 134430" src="https://github.com/user-attachments/assets/108bb057-5433-4e92-b0dd-e7b8f0705c27" />
 
 ---
+
 # Limit
 - Display more than 1000 records  in the Display Editor
+
 - Edit ->Preferences -> SQL Execution-> Un Check Limit Rows Check Box -> OK
+
 <img width="935" height="385" alt="Screenshot 2025-12-28 133810" src="https://github.com/user-attachments/assets/3961aab9-3dfa-4bc8-8f50-af3c28233801" />
 
 - Display the employee numbers of the 10 highest-paid employees in the database.
+
 ```
 select * from salaries order by salary desc LIMIT 10; 
 ```
@@ -601,12 +630,18 @@ select * from salaries order by emp_no desc LIMIT 10;
 SELECT  *  FROM  dept_emp LIMIT 100;
 ```
 ---
+
 # SQL Order
 - Display Limit can be set as mentioned below as well. 
+
 - This Limit is applicable only to the specific Query only
+
 <img width="902" height="314" alt="Screenshot 2025-12-28 133953" src="https://github.com/user-attachments/assets/6bb072d1-f91c-4290-8c52-58dd5736e371" />
+
 ---
+
 # SQL Order
+
 ```
 SELECT column_name(s)
 FROM table_name
