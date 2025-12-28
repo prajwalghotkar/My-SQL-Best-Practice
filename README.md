@@ -651,6 +651,6 @@ HAVING conditions
 ORDER BY column_name(s)
 LIMIT number;
 ```
-- Please refer to the Select_Statement.sql file for better understanding. 
+- Please refer to the Select Statement.sql file for better understanding. 
 
 
