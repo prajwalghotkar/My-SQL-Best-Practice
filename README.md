@@ -133,15 +133,17 @@ a comma to define a primary key
 - A Query is a command you write in SQL with the idea of either retrieving information from the 
 database on which you are working, or, alternatively, to insert, update, or delete data from it
 - Retrieve data from a Table
-**SELECT * FROM sales;**
-**SELECT * FROM sales.sales;**
+```
+SELECT * FROM sales;
+SELECT * FROM sales.sales;
+```
 ---
 # Drop Table
 - The DROP statement used for deleting an SQL object
 ##### Syntax
-- DROP TABLE table_name;
+```DROP TABLE table_name;```
 ##### Example 
-- DROP TABLE sales
+```DROP TABLE sales```
 
 ---
 
