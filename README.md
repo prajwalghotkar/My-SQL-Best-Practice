@@ -15,11 +15,11 @@ CREATE DATABASE databasename;
 ```
 #### Example 
 ```
-create database Sales
+create database Sales;
 ```
 #### Drop (Delete) database 
 ```
-drop database Sales
+drop database Sales;
 ```
 ---
 ## Syntax
