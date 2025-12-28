@@ -10,23 +10,28 @@
 - A relational database defines database relationships in the form of tables. The tables are related to each other - based on data common to each.
 
 #### Syntax
-- CREATE DATABASE databasename;
-
+```
+CREATE DATABASE databasename;
+```
 #### Example 
-- create database Sales
-
+```
+create database Sales
+```
 #### Drop (Delete) database 
-
-- drop database Sales
+```
+drop database Sales
+```
 ---
 ## Syntax
-### **CREATE DATABASE [IF NOT EXISTS] database_name;**
+```
+CREATE DATABASE [IF NOT EXISTS] database_name;
+```
 - [IF NOT EXISTS] verifies if a database with the same name exists already
 - Element the square brackets are optional
 
 - **database_name:** Give a name that is short but at the same time as related to the content of the data as possible
 
- - The SQL code is not case-sensitive 
+- The SQL code is not case-sensitive 
 
 - ; (the semicolon character) it functions as a statement terminator
   - when your code contains more than a single statement, ; is indispensable
@@ -34,26 +39,31 @@
   - will improve the readability of your code
 
 - Example (to view the database created use the refresh button)
+```
 create database if not exists Sales;    
 drop database Sales;
-
+```
 ---
 # Create Schema
 - In MySQL, schema is synonymous with database. As the query is written to create the database, similarly the query can be written to create the schema.
 
 - The logical structure can be used by the schema to store data while the memory component can be used by the database to store data. Also, a schema is a collection of tables while a database is a collection of schema.
 
-- The database is created with the syntax ----> 	create database databasename;
+- The database is created with the syntax ----> 	```create database databasename;```
 
-##### Example     create database DatabaseSample;
+##### Example    
+```create database DatabaseSample;```
 
-##### The syntax to create a schema ---->	create schema SchemaName;
+##### The syntax to create a schema 
+```create schema SchemaName;```
 
-##### Example create schema SchemaSample;
+##### Example 
+```create schema SchemaSample;```
 
 - To display the database and the schema as well, the show command is used.
 
-- Example ----> show databases;
+- Example
+```show databases;```
 
 # Data Base Details 
 - Click the information symbol next to the database, it opens the database details in different tabs such as info, Tables, Columns, Indexes  etc
