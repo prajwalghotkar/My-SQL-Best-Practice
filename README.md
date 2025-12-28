@@ -240,6 +240,7 @@ FOREIGN KEY (column_name_2) REFERENCES table_name_2(column_name_2)
 ```
 ALTER TABLE TABLE_NAME DROP FOREIGN KEY sales_ibfk_1(FR_KEY_NAME);
 ```
+
 <img width="1704" height="1008" alt="Screenshot 2025-12-10 181332" src="https://github.com/user-attachments/assets/ec4d4297-21b4-4a0d-824e-ed70c41c6f89" />
 
 - Please refer to the FOREIGN_KEY_CONSTRAINT.sql file for better understanding.
@@ -328,7 +329,9 @@ SELECT * FROM   employees WHERE FIRST_NAME = 'Denis’;
 SELECT * FROM employees WHERE FIRST_NAME = 'Elvis';
 ```
 - **SELECT- WHERE-Operators**
+
 <img width="1029" height="421" alt="Screenshot 2025-12-28 130323" src="https://github.com/user-attachments/assets/7592ef31-deb9-4a52-92cc-2fff46dd76d1" />
+
 ---
 # WHERE-AND,OR
 - AND allows you to logically combine two statements in the condition code block
@@ -336,12 +339,12 @@ SELECT * FROM employees WHERE FIRST_NAME = 'Elvis';
 conditions separated by AND are TRUE.
 - **OR -** The OR conditions are set on the same/different column. The OR operator displays a record if 
 any of the conditions separated by OR is TRUE.
+
 ---
 # Operator Precedence
-- logical operator precedence is an SQL rule stating that in the execution of the query, the operator AND is 
-applied first, while the operator OR is applied second.
-- Operator Precedence regardless of the order in which you use these operators, SQL will always start by 
-reading the conditions around the AND operator
+
+- logical operator precedence is an SQL rule stating that in the execution of the query, the operator AND is applied first, while the operator OR is applied second.
+- Operator Precedence regardless of the order in which you use these operators, SQL will always start by reading the conditions around the AND operator
 **Precedence can be changed with Brackets ()**
 
 - Bracket Execute First then AND
@@ -369,39 +372,47 @@ SELECT  * FROM employees WHERE gender = 'F' AND (first_name = 'Kellie' OR first_
 SELECT  count(*) FROM employees WHERE gender = 'F' AND (first_name = 'Kellie' OR first_name = 'Aruna’);
 ```
 ---
+
 # WHERE-IN-NOT IN
 - Get the records based on multiple OR Condition
+
 ```
 SELECT  * FROM employees WHERE 
 first_name = 'Cathie’
 OR first_name = 'Mark’
 OR first_name = 'Nathan’;
 ```
+
 - Display Count – 691 Rows
 ```
 select count(*) from employees WHERE  first_name = 'Cathie' OR first_name = 'Mark’ 
 OR first_name = 'Nathan’;
 ```
+
 - Multiple OR can be Replaced with IN-Operator 
 ```
 select count(*) from employees WHERE  first_name IN ('Cathie','Mark' ,'Nathan’);
 select *  from employees WHERE  first_name IN ('Cathie','Mark' ,'Nathan');
 ```
+
 - **NOT IN Operator** – Get all the records other than the name specified in the Bracket
 ```
 select count(*) from employees WHERE  first_name NOT IN ('Cathie','Mark' ,'Nathan’);
 select *  from employees WHERE  first_name NOT IN ('Cathie','Mark' ,'Nathan’);
 SELECT  * FROM employees WHERE first_name IN ('Denis' , 'Elvis’);
 ```
+
 - **Example 2 – IN**
 ```
 SELECT  * FROM employees WHERE first_name IN ('Denis' , 'Elvis’);
 ```
+
 - **Example 2 – NOT IN**
 ```
 SELECT * FROM employees WHERE  first_name NOT IN ('John' , 'Mark', 'Jacob');
 ```
 ---
+
 # WHERE-LIKE-NOT LIKE
 - Like /Not Like – This is used for Pattern Matching. Use the % symbol for pattern matching.
 - The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
@@ -410,9 +421,12 @@ SELECT * FROM employees WHERE  first_name NOT IN ('John' , 'Mark', 'Jacob');
    - The underscore sign (_) represents one, single character
 - The percent sign and the underscore can also be used in combinations
 - You can also combine any number of conditions using AND or OR operators
+
 ---
+
 - **Here are some examples showing different LIKE operators with '%' and '_' wildcards:**
 <img width="909" height="446" alt="Screenshot 2025-12-28 131532" src="https://github.com/user-attachments/assets/359f744f-5f48-41c5-9c50-8d58ba7b99d4" />
+
 - Get all Names starting with Mar
 ```
 SELECT * FROM employees WHERE  first_name LIKE ('Mar%’);
