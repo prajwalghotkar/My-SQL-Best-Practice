@@ -663,5 +663,134 @@ ORDER BY column_name(s)
 LIMIT number;
 ```
 - Please refer to the Select Statement.sql file for better understanding. 
+----
+# Insert Statement
+<img width="1327" height="598" alt="Screenshot 2025-12-29 183141" src="https://github.com/user-attachments/assets/df4273db-8d3c-4051-bd79-3131ef32a4d9" />
 
+# INSERT –INTO 
+```
+INSERT INTO employees 
+(emp_no,birth_date,first_name,last_name,gender,hire_date)values (999901,'1986-04-21', 'John', 'Smith', 'M', '2011-01-01’);
+```
+- The newly inserted record displays as the first record, since in the employee number inserted is the highest number
+```
+select * from employees order by emp_no DESC limit 5;
+INSERT INTO employees VALUES  ( 999903,  '1977-09-14', 'Johnathan', 'Creek', 'M', '1999-01-01' );
+```
+```
+SELECT  * FROM  titles LIMIT 10;
+insert into titles ( emp_no, title, from_date)values (  999903, 'Senior Engineer', '1997-10-01' ); 
+SELECT  * FROM titles ORDER BY emp_no DESC;
+```
+```
+SELECT    *  FROM  dept_emp ORDER BY emp_no DESC  LIMIT 10; 
+insert into dept_emp ( emp_no, dept_no, from_date,  to_date ) values ( 999903, 'd005', '1997-10-01', '9999-01-01' );
+```
+----
+# INSERT –Data Into One table from another Table
+```
+select * from  departments ;
 
+# Create Duplicate Table 
+
+DROP TABLE IF EXISTS department_dup;
+ CREATE TABLE department_dup
+( 
+ dept_no  char(4) NOT NULL, 
+ dept_name varchar(40) NOT NULL  
+);
+```
+```
+# Insert Data to Duplicate Table
+
+INSERT INTO department_dup (dept_no ,dept_name ) SELECT * FROM  departments ;
+SELECT * From department_dup;
+```
+- Please refer to the Select Insert Statement_Update Statement_Delete Statement.sql file for better understanding.
+----
+# Update Statement
+
+#### Commit and Roll Back
+
+- The COMMIT statement 
+  - saves the transaction in the database 
+  - changes cannot be undone
+  - used to save the state of the data in the database at the moment of its execution
+
+- The ROLLBACK clause 
+  - allows you to take a step back 
+  - the last change(s) made will not count 
+  - reverts to the last non-committed state 
+  - it will refer to the state corresponding to the last time you executed COMMIT
+  - ROLLBACK will have an effect on the last execution you have performed
+  - you cannot restore data to a state corresponding to an earlier COMMIT
+
+# Safe Update Check Box Unchecked
+- **Edit –> Preferences -> SQL Editor -> Un Check Safe Update Check BOX -> OK**
+<img width="937" height="664" alt="Screenshot 2025-12-29 184452" src="https://github.com/user-attachments/assets/cfd96820-eaee-44cc-b6e4-2845fe0d18e2" />
+<img width="1391" height="952" alt="Screenshot 2025-12-29 184533" src="https://github.com/user-attachments/assets/ff68b837-8160-4bfb-995d-0d1008b096df" />
+
+- Update Record where EMP_No = 999901
+```select * from employees where emp_no = 999901;```
+
+- Update Data 
+```Update employees SET First_name = 'Stella', last_name = 'Parkinson' , birth_date ='1990-12-31', Gender ='F' where emp_no = 999901; ```
+
+- Display Updated Data
+```select * from employees where emp_no = 999901;```
+```
+select * from department_dup ; 
+COMMIT;
+```
+- The following update statement updates all records in the table
+```
+update department_dup SET Dept_no = 'd011',  dept_name = 'Quality Control’;  
+select * from department_dup ;
+```
+- Rollback will take  you  till the previous commit statement 
+``` 
+ROLLBACK;  
+select * from department_dup ;
+```
+```
+select * from departments;   
+UPDATE departments SET  dept_name = 'Data Analysis' WHERE  dept_no = 'd002';   
+select * from departments;
+```
+- Please refer to the Select Insert Statement_Update Statement_Delete Statement.sql file for better understanding.
+----
+
+# Delete Statement
+```
+select * from employees where emp_no = 999903 ;    
+
+DELETE from employees where emp_no = 999903 ;    
+
+select * from employees where emp_no = 999903 ; 
+
+rollback ; 
+
+select * from employees where emp_no = 999903 ; 
+```
+
+- Delete Complete Data from the Table
+```
+DELETE FROM department_dup ;
+
+rollback ;   
+
+SELECT * FROM department_dup ; 
+
+DELETE FROM departments WHERE dept_no = 'd010';
+```
+# DROP, DELETE and TRUNCATE
+
+- DROP - you won’t be able to roll back to its initial state, or to the last COMMIT statement 
+
+- Use DROP TABLE only when you are sure you aren’t going to use the table in question anymore
+
+- TRUNCATE ~ DELETE without WHERE When truncating, auto-increment values will be reset
+
+- DELETE removes records row by row
+
+- Please refer to the Select Insert Statement_Update Statement_Delete Statement.sql file for better understanding.
