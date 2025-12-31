@@ -794,3 +794,108 @@ DELETE FROM departments WHERE dept_no = 'd010';
 - DELETE removes records row by row
 
 - Please refer to the Select Insert Statement_Update Statement_Delete Statement.sql file for better understanding.
+----
+# Aggregate Function
+
+- Aggregate functions - they gather data from many rows of a table, then aggregate it into a single value
+- The information contained in multiple rows is the single value they provide.
+- MySQL provide a set of aggregate functions that perform operations on all the entities of the column of a table considering them as a single unit.
+
+<img width="1126" height="639" alt="Screenshot 2025-12-31 172959" src="https://github.com/user-attachments/assets/16cd3366-f42d-4404-92b6-1b88a8862119" />
+<img width="1273" height="665" alt="Screenshot 2025-12-31 173057" src="https://github.com/user-attachments/assets/a17225a6-f92d-417a-9f6d-2cd3856ae363" />
+
+**COUNT() - applicable to both numeric and non-numeric data**
+```
+SELECT COUNT(Salary) from Salaries;
+SELECT COUNT(from_date) from Salaries;
+```
+**Count Distinct: Find the number of times unique values are encountered in a given
+column.**
+```
+SELECT COUNT(distinct (from_date)) from Salaries;
+SELECT COUNT(DISTINCT dept_no) FROM dept_emp;
+```
+**COUNT(*): * returns the number of all rows of the table, values NULL included**
+```
+SELECT COUNT(*) from Salaries;
+```
+---
+# Aggregate Functions- Sum()
+- **SUM()** - works only with numeric data
+```SELECT SUM(Salary) from Salaries;```
+```SELECT SUM(salary) FROM salaries WHERE from_date > '1997-01-01';```
+---
+# Aggregate Functions- Max() and Min()
+```
+SELECT MAX(Salary) from Salaries;
+SELECT MIN(Salary) from Salaries;
+SELECT MAX(salary) FROM salaries WHERE from_date > '1997-01-01’;
+SELECT MIN(emp_no) FROM employees;
+SELECT MAX(emp_no) FROM employees;
+```
+---
+# Aggregate Functions- Avg()
+- Extracts the average value of all non-null values in a field
+```SELECT AVG(Salary) from Salaries;```
+```SELECT AVG(salary) FROM salaries WHERE from_date > '1997-01-01’;```
+---
+# Aggregate Functions- ROUND()
+- ROUND(#,decimal_places) - numeric, or math, function you can use
+- ROUND() - usually applied to the single values that aggregate functions return
+
+```SELECT ROUND(AVG(Salary)) from Salaries;```
+```SELECT ROUND(AVG(Salary),2) from Salaries;```
+```SELECT ROUND(AVG(Salary),-2) from Salaries;```
+```SELECT ROUND(AVG(salary),2) FROM salaries WHERE from_date > '1997-01-01';```
+
+---
+# IF NULL () and COALESCE()
+- IFNULL(expression_1, expression_2)
+
+- Returns the first of the two indicated values if the data value found in the table is not null, and returns the second value if there is a null value
+
+- COALESCE(expression_1, expression_2 …, expression_N) Allows you to insert N arguments in the parentheses
+
+- COALESCE() will always return a single value of the ones we have within parentheses, and this value will be the first non-null value of this list, reading the values from left to right
+
+- if COALESCE() has two arguments, it will work precisely like IFNULL()
+
+- IFNULL() and COALESCE() do not make any changes to the data set. They merely create an output where certain data values appear in place of NULL values. 
+
+- **IFNULL()works with precisely two arguments**
+
+- **COALESCE() can have one, two, or more arguments I**
+```
+DROP TABLE IF EXISTS department_dup ;
+CREATE TABLE department_dup
+ (
+dept_no char(4),
+dept_name varchar(40),
+dept_manager varchar(40)
+);
+INSERT INTO department_dup (dept_no , dept_name ) select * from departments ;
+select * from department_dup;
+insert into department_dup (dept_no) values ('D100’);
+insert into department_dup (dept_no) values ('D101’);
+```
+- **Use of IFNULL**
+```
+select * from department_dup;
+
+select dept_no, IFNULL (dept_name, 'No Department Name') as dept_name from department_dup; 
+```
+- **Replace IFNULL() with COALESCE()**
+```select dept_no, COALESCE(dept_name, 'No Department Name') as dept_name from department_dup;```
+- COALESCE() – with three arguments
+```select dept_no, dept_name, COALESCE(Dept_Manager, Dept_Name , 'N/A') as dept_manager from department_dup;```
+
+- COALESCE () Can be used to generate Dummy columns
+```
+select dept_no,COALESCE ('Good Day') as Day from department_dup;
+SELECT dept_no, dept_name, COALESCE(dept_no, dept_name) AS dept_info FROM
+departments_dup ORDER BY dept_no ASC;
+```
+---
+# Replacing NULL Values
+- Three ways to replace **NULL values - ISNULL() Function, Case Statement & COALESCE() Function**
+- Please refer to the Select Aggregate Functions.sql file for better understanding. 
