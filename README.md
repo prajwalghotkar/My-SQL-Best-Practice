@@ -898,4 +898,57 @@ departments_dup ORDER BY dept_no ASC;
 ---
 # Replacing NULL Values
 - Three ways to replace **NULL values - ISNULL() Function, Case Statement & COALESCE() Function**
-- Please refer to the Select Aggregate Functions.sql file for better understanding. 
+- Please refer to the Select Aggregate Functions.sql file for better understanding.
+
+----
+
+# Union and Join
+----
+# Union
+- Union is used to combine two queries into a single result set using the select statements. Union extracts all the rows that are described in the query.
+
+**Rules for Union**
+- The number and order of the columns should be the same in all queries.
+- The corresponding column position of each select query must have a compatible data type.
+- The column name selected in the different SELECT queries must be in the same order.
+- The first SELECT query's column name will be the output's column name.
+- The number of columns used in your first and second queries must be the same and the data type (e.g. INT,VARCHAR,etc.) must match.
+- The column name included in both queries can differ; when this is the case, the resulting dataset will show the column name from the first query.
+- When using SQL aliases in conjunction with UNION and UNION ALL, you only need to include the alias with the first query, Including it with the second query will not cause an error but will also have no impact on the output.
+---
+# Union VS Union ALL
+#### **Union** combines the result set of two or more SELECT statements, only distinct values.
+```
+SELECT column_1, column_2
+FROM table_1
+[WHERE condition]
+ 
+UNION
+ 
+SELECT column_1, column_2
+FROM table_2
+[WHERE condition]
+
+```
+#### **UNION ALL** combines the results of two or more SELECT statements, showing all values, including duplicates if they exist.
+```
+SELECT column_1, column_2
+FROM table_1
+[WHERE condition]
+ 
+UNION ALL
+ 
+SELECT column_1, column_2
+FROM table_2
+[WHERE condition]
+```
+<img width="1686" height="749" alt="Screenshot 2026-01-02 115250" src="https://github.com/user-attachments/assets/acd228a2-6ee5-4d6f-bb76-7cbb386c8802" />
+
+- The Union and Join clauses are different
+  - Union always combines the result set vertically.
+  - UNION combines data from multiple similar tables.
+  - Join appends the output horizontally. 
+  - JOIN combines data from multiple different tables
+<img width="1168" height="549" alt="Screenshot 2026-01-02 125753" src="https://github.com/user-attachments/assets/fb146c63-4c71-4577-a82e-38b2807060b9" />
+
+----
