@@ -1000,19 +1000,33 @@ FROM table_2
 - To create Join need to find a related column from the two tables that contains the same type of data.
 
 # Inner Join or Join
+
 <img width="938" height="540" alt="Screenshot 2026-01-03 125156" src="https://github.com/user-attachments/assets/3f47b4ba-cd9a-4aea-bf89-942641abf311" />
+
 - Please refer to the Union and Joins.sql file for better understanding.
+
 ----
+
 # Left Outer Join or Left Join
+
 <img width="844" height="574" alt="Screenshot 2026-01-03 125402" src="https://github.com/user-attachments/assets/cc4f7d3a-15a5-4dcb-9759-64b83f9f7be5" />
+
 - Please refer to the Union and Joins.sql file for better understanding.
+
 ----
+
 # Right Outer Join or Right Join
+
 <img width="883" height="585" alt="Screenshot 2026-01-03 125503" src="https://github.com/user-attachments/assets/b0db6ebc-1e79-4107-a8ac-2ba8c658d4bc" />
+
 - Please refer to the Union and Joins.sql file for better understanding.
+
 ----
+
 # Full Outer Join or Full Join
+
 <img width="887" height="580" alt="Screenshot 2026-01-03 125606" src="https://github.com/user-attachments/assets/fe4cabb7-09a6-4c91-aa72-981b661c011c" />
+
 - Please refer to the Union and Joins.sql file for better understanding.
 ----
 
