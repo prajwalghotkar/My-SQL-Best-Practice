@@ -898,6 +898,42 @@ departments_dup ORDER BY dept_no ASC;
 ---
 # Replacing NULL Values
 - Three ways to replace **NULL values - ISNULL() Function, Case Statement & COALESCE() Function**
+<img width="668" height="440" alt="Screenshot 2026-01-03 121347" src="https://github.com/user-attachments/assets/34d63b92-587c-45ce-9b74-8ea1e5e2225f" />
+
+- Create Table 
+```
+Drop table if exists tblEmployees;
+
+Create table tblEmployees
+(	
+EmployeeID int,  
+Name varchar(50),    
+ManagerID int 
+); 
+Insert  Data 
+
+insert into tblEmployees values (1, 'Mike',3);
+insert into tblEmployees values (2, 'Rob',1);
+insert into tblEmployees values (3, 'Todd',NULL);
+insert into tblEmployees values (4, 'Ben',1);
+insert into tblEmployees values (5, 'Sam',1);
+```
+
+- Replace Manager null with No Manager
+```
+SELECT E.Name as Employee, IFNULL(M.Name,'No Manager') as Manager 
+FROM tblEmployees E
+LEFT JOIN tblEmployees M 
+ON E.ManagerID = M.EmployeeID;
+```
+
+- Replacing **NULL** value using **COALESCE()** function: COALESCE() function, returns the first NON NULL value.
+```
+SELECT E.Name as Employee, COALESCE(M.Name, 'No Manager') as Manager
+FROM tblEmployees E
+LEFT JOIN tblEmployees M
+ON E.ManagerID = M.EmployeeID;
+```
 - Please refer to the Select Aggregate Functions.sql file for better understanding.
 
 ----
@@ -952,3 +988,37 @@ FROM table_2
 <img width="1168" height="549" alt="Screenshot 2026-01-02 125753" src="https://github.com/user-attachments/assets/fb146c63-4c71-4577-a82e-38b2807060b9" />
 
 ----
+# Union
+- Please refer to the Union and Joins.sql file for better understanding.
+----
+# Joins
+<img width="1346" height="765" alt="Screenshot 2026-01-03 124538" src="https://github.com/user-attachments/assets/60d504be-6298-4670-af24-e7099d02abc8" />
+<img width="1179" height="671" alt="Screenshot 2026-01-03 124652" src="https://github.com/user-attachments/assets/c8147d38-780c-4be0-ae66-4f342e54e879" />
+
+- Join in the SQL tool that allows us to cunstruct a relationship between objects.
+- A join shows a result set,containing fields derived from two or more tables.
+- To create Join need to find a related column from the two tables that contains the same type of data.
+
+# Inner Join or Join
+<img width="938" height="540" alt="Screenshot 2026-01-03 125156" src="https://github.com/user-attachments/assets/3f47b4ba-cd9a-4aea-bf89-942641abf311" />
+- Please refer to the Union and Joins.sql file for better understanding.
+----
+# Left Outer Join or Left Join
+<img width="844" height="574" alt="Screenshot 2026-01-03 125402" src="https://github.com/user-attachments/assets/cc4f7d3a-15a5-4dcb-9759-64b83f9f7be5" />
+- Please refer to the Union and Joins.sql file for better understanding.
+----
+# Right Outer Join or Right Join
+<img width="883" height="585" alt="Screenshot 2026-01-03 125503" src="https://github.com/user-attachments/assets/b0db6ebc-1e79-4107-a8ac-2ba8c658d4bc" />
+- Please refer to the Union and Joins.sql file for better understanding.
+----
+# Full Outer Join or Full Join
+<img width="887" height="580" alt="Screenshot 2026-01-03 125606" src="https://github.com/user-attachments/assets/fe4cabb7-09a6-4c91-aa72-981b661c011c" />
+- Please refer to the Union and Joins.sql file for better understanding.
+----
+
+
+
+
+
+
+
