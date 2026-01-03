@@ -1017,7 +1017,8 @@ FROM table_2
 
 # Right Outer Join or Right Join
 
-<img width="883" height="585" alt="Screenshot 2026-01-03 125503" src="https://github.com/user-attachments/assets/b0db6ebc-1e79-4107-a8ac-2ba8c658d4bc" />
+<img width="927" height="626" alt="Screenshot 2026-01-03 195432" src="https://github.com/user-attachments/assets/68093cc4-f63b-4264-a9d7-675c55d10bf1" />
+
 
 - Please refer to the Union and Joins.sql file for better understanding.
 
