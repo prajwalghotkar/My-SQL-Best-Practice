@@ -1009,7 +1009,7 @@ FROM table_2
 
 # Left Outer Join or Left Join
 
-<img width="844" height="574" alt="Screenshot 2026-01-03 125402" src="https://github.com/user-attachments/assets/cc4f7d3a-15a5-4dcb-9759-64b83f9f7be5" />
+<img width="957" height="643" alt="Screenshot 2026-01-03 195252" src="https://github.com/user-attachments/assets/691a2c2e-44d6-4785-9493-aa570fed085d" />
 
 - Please refer to the Union and Joins.sql file for better understanding.
 
