@@ -1043,7 +1043,7 @@ FROM table_2
 - A subquery can be treated as an inner query, which is a SQL query placed as a part of another query called as outer query
 - The inner query executes first before its parent query so that the results of the inner query can be passed to the outer query.
 
---
+---
 
 #### **The following are the rules to use subqueries:**
 - Subqueries should always be in parentheses.
@@ -1051,7 +1051,7 @@ FROM table_2
 - We cannot use the ORDER BY clause in a subquery, although it can be used inside the main query.
 - If we use a subquery in a set function, it cannot be immediately enclosed in a set function.
 
---
+---
 
 #### **The following are the advantages of using subqueries:**
 - The subqueries provide alternative ways to query the data from the table; otherwise, we need to use complex joins and unions.
@@ -1066,7 +1066,7 @@ FROM table_2
 - if a row value of a subquery exists  **-> TRUE ->**  the corresponding record of the outer query is extracted
 - if a row value of a subquery doesn’t exist **->FALSE->** no row value from the outer query is extracted
 
---
+---
 
 ####  Comparison Exists and IN
 <img width="1068" height="515" alt="Screenshot 2026-01-04 092942" src="https://github.com/user-attachments/assets/24e7fc43-6448-4e67-a110-16a59d4d94c3" />
