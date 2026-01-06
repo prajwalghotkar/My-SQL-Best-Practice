@@ -1072,6 +1072,9 @@ FROM table_2
 <img width="1068" height="515" alt="Screenshot 2026-01-04 092942" src="https://github.com/user-attachments/assets/24e7fc43-6448-4e67-a110-16a59d4d94c3" />
 
 - Please refer to the Subqueries.sql file for better understanding.
-
+---
+# Self Join And Views
+- Please refer to the Self_Joins_Views.sql file for better understanding.
+ 
 
 
