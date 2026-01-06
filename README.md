@@ -1125,22 +1125,32 @@ DELIMITER ;
 # Execute Procedure 
 - Option - Next to the procedure name click the icon to execute the procedure
 
+<img width="577" height="301" alt="Screenshot 2026-01-06 234137" src="https://github.com/user-attachments/assets/c17e7519-4bf9-402e-8055-24373e8168ef" />
+
 ---
 # Alternate way to create Procedure 
 
 - Right Click **Stored Procedure -> Create Stored Procedure**  A new window will open for  the procedure creation Modify the procedure name (if required), and enter procedure script ,click **Apply**
+
+<img width="972" height="338" alt="Screenshot 2026-01-06 234306" src="https://github.com/user-attachments/assets/f16ff4a8-ecc1-402a-ad97-b4287a79030c" />
 
 ---
 # Alternate way to create Procedure 
 
 - Another window will be opened with procedure details. Review procedure details and click Apply
 
+<img width="503" height="383" alt="Screenshot 2026-01-06 234410" src="https://github.com/user-attachments/assets/c47541b4-0704-47e0-94a2-56803792ed34" />
+
 - Procedure created, Click –FINISH
+
+<img width="473" height="362" alt="Screenshot 2026-01-06 234440" src="https://github.com/user-attachments/assets/ab9ce90a-9fd0-437c-8ba4-b71907c50cd0" />
 
 ----
 # Execute Procedure 
 
 - New Procedure created, Click on the Icon next to procedure – Procedure gets executed
+
+<img width="676" height="339" alt="Screenshot 2026-01-06 234531" src="https://github.com/user-attachments/assets/a9163e52-2f6c-474e-a24a-6bd273574958" />
 
 ----
 
@@ -1151,6 +1161,8 @@ DELIMITER ;
 
 - Drop Procedure- Option -2
   - Under the Stored Procedure ->  Right Click Procedure Name Click **Drop Stored Procedure**
+
+<img width="545" height="340" alt="Screenshot 2026-01-06 234736" src="https://github.com/user-attachments/assets/b1e1f37f-f161-44f2-9ed5-074a5f5ebe07" />
 
 ----
 
@@ -1177,10 +1189,19 @@ DELIMITER ;
 ```
 
 - Click the button to run the stored procedure
+
+<img width="252" height="250" alt="Screenshot 2026-01-06 235011" src="https://github.com/user-attachments/assets/d6303f8d-b28f-45c4-8f3b-72d2abb0c40a" />
+
 - Enter the employee number and click Execute
 
+<img width="387" height="152" alt="Screenshot 2026-01-06 235018" src="https://github.com/user-attachments/assets/d49fe26c-6115-4886-be36-f94fa2908b13" />
+
+
 - Displayed  the result in a new tab
-- Alternate Way to Call Procedure 
+
+<img width="579" height="374" alt="Screenshot 2026-01-06 235052" src="https://github.com/user-attachments/assets/be225d02-a806-4d23-b21d-82aa62fe7fa1" />
+
+- Alternate Way to Call Procedure
 
 ```CALL EMP_SALARY (11300);```
 
@@ -1206,6 +1227,8 @@ DELIMITER ;
 
 ```CALL EMP_AVG_SALARY (11300);```
 
+<img width="353" height="109" alt="Screenshot 2026-01-06 235238" src="https://github.com/user-attachments/assets/3de24333-758c-46c2-bac3-004941817bde" />
+
 ----
 
 # Procedure with Input and Output Parameter 
@@ -1228,13 +1251,28 @@ END $$
 DELIMITER ;
 ```
 - Click the button to run the stored procedure
+
+<img width="233" height="227" alt="Screenshot 2026-01-06 235714" src="https://github.com/user-attachments/assets/1b3e479d-a986-4032-b59b-3237159caa85" />
+
 - Enter the Employee number and click Execute 
+
+
+<img width="399" height="173" alt="Screenshot 2026-01-06 235731" src="https://github.com/user-attachments/assets/c6f7b8df-5d9e-4c9f-aea3-35334cbf8476" />
+
+
 - Displaying the output in a new window 
+
+
+<img width="593" height="352" alt="Screenshot 2026-01-06 235756" src="https://github.com/user-attachments/assets/e74048bf-145b-44d1-8829-6f183b20a902" />
+
+
 - Executing Procedure Alternate Way 
 
 ```CALL EMP_AVG_SALARY_OUT (11300, @P_AVG_SALARY);```
 
 ```select @P_AVG_SALARY as avg_sal;```
+
+----
 
 # Example 2 
 
@@ -1298,6 +1336,9 @@ DELIMITER ;
 ----
 
 # FUNCTIONS
+
+<img width="973" height="353" alt="Screenshot 2026-01-07 000542" src="https://github.com/user-attachments/assets/edcbaf58-e46d-44a5-b4cd-3fcc9a025410" />
+
 - Although there are no OUT parameters, there is a ‘return value’
 - It is obtained after running the query contained in the body of the function
 - we cannot call a function
@@ -1326,7 +1367,16 @@ DELIMITER ;
 - Execute Function –Option -2
   - Click the button to run the Functions
 
+
+<img width="241" height="101" alt="Screenshot 2026-01-07 000813" src="https://github.com/user-attachments/assets/0ab99eab-cff4-4f5d-b8e3-6514db0f351e" />
+
+
+
   - Enter the Employee number and click Execute 
+
+
+<img width="413" height="152" alt="Screenshot 2026-01-07 000820" src="https://github.com/user-attachments/assets/3e6f9c60-3173-43cb-8ce7-e6ac654e181f" />
+
 
 ---
 # Example -2
@@ -1356,6 +1406,16 @@ DELIMITER ;
 
 ----
 # Difference Functions and Procedure
+
+<img width="774" height="440" alt="Screenshot 2026-01-07 001041" src="https://github.com/user-attachments/assets/761087e6-fc2c-42d8-9c3e-2e5e3c44ce4a" />
+
+<img width="922" height="428" alt="Screenshot 2026-01-07 001053" src="https://github.com/user-attachments/assets/510eed45-fbe3-404e-84e9-eeba9e752320" />
+
+<img width="689" height="344" alt="Screenshot 2026-01-07 001106" src="https://github.com/user-attachments/assets/1ac0160c-e331-4a11-8837-8bd5ce3ef97e" />
+
+<img width="708" height="324" alt="Screenshot 2026-01-07 001119" src="https://github.com/user-attachments/assets/b148f7e9-ff54-4399-83be-7601f653cf2d" />
+
+
 - if you need to obtain more than one value as a result of a calculation, you are better off using a procedure.
 - if you need just one value to be returned, then you can use a function.
 
