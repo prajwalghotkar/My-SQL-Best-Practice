@@ -1075,6 +1075,270 @@ FROM table_2
 ---
 # Self Join And Views
 - Please refer to the Self_Joins_Views.sql file for better understanding.
- 
+---
 
+# STORED ROUTINE
+- A stored routine is either a procedure or a function. Stored routines are created with the CREATE PROCEDURE and CREATE FUNCTION statements
+
+   - A procedure is invoked using a CALL statement and can only pass back values using output variables.
+   - A function can be called from inside a statement just like any other function (that is, by invoking the function's name), and can return a scalar value.
+   - Stored routines can be dropped with the DROP PROCEDURE and DROP FUNCTION statements and altered with the ALTER PROCEDURE and ALTER FUNCTION statements.
+
+<img width="838" height="399" alt="Screenshot 2026-01-06 220028" src="https://github.com/user-attachments/assets/2e4dcd4b-d0bf-427f-934d-f71d04cad30e" />
+
+---
+
+# PROCEDURE
+-  Stored procedures are sub-routines, segments of SQL statements which are stored in the SQL catalogue
+-  All the applications that can access Relational databases (Java, Python, PHP etc.), can access stored procedures.
+-  Stored procedures contain IN and OUT parameters or both. 
+-  They may return result sets in case you use SELECT statements. Stored procedures can return multiple result sets.
+- You can create a procedure using the MySQL CREATE PROCEDURE statement.
+
+##### Types Of Procedures
+
+- **Procedure with no parameters:** A procedure without parameters does not take any input or cast an output indirectly. It is simply called with its procedure name followed by () (without any parameters). 
+
+- **Procedure with IN parameter:** An IN parameter is used to take a parameter as input such as an attribute. When we define an IN parameter in a procedure, the calling program has to pass an argument to the stored procedure.
+
+- **Procedure with OUT parameter:** An OUT parameter is used to pass a parameter as output or display like the select operator, but implicitly (through a set value). The value of an OUT parameter can be changed inside the procedure and its new value is passed back to the calling program. A procedure cannot access the initial value of the OUT parameter when it starts.
+
+- **The procedure with IN-OUT parameter:** An INOUT parameter is a combination of IN and OUT parameters. It means that the calling program may pass the argument, and the stored procedure can modify the INOUT parameter and pass the new value back to the calling program.
+
+----
+# Delimiter
+
+#### DELIMITER //
+
+- With the above statement, the MySQL server would change the delimiter to ‘//’ instead of ‘;’ Once the proc is created and saved in the MySQL server, you can switch back the DELIMITER to a semicolon using the command below.
+
+DELIMITER ;
+
+- This would again reset the DELIMITER to a semicolon.
+
+  - semi-colons  ;
+    - they function as a statement terminator 
+    - technically, they can also be called delimiters 
+
+- DELIMITER $$ - by typing DELIMITER $$, you’ll be able to use the dollar symbols as your delimiter
+
+# Execute Procedure 
+- Option - Next to the procedure name click the icon to execute the procedure
+
+---
+# Alternate way to create Procedure 
+
+- Right Click **Stored Procedure -> Create Stored Procedure**  A new window will open for  the procedure creation Modify the procedure name (if required), and enter procedure script ,click **Apply**
+
+---
+# Alternate way to create Procedure 
+
+- Another window will be opened with procedure details. Review procedure details and click Apply
+
+- Procedure created, Click –FINISH
+
+----
+# Execute Procedure 
+
+- New Procedure created, Click on the Icon next to procedure – Procedure gets executed
+
+----
+
+# Procedure – DROP
+- Drop Procedure- Option -1
+```DROP PROCEDURE new_procedure;```
+
+- Drop Procedure- Option -2
+  - Under the Stored Procedure ->  Right Click Procedure Name Click **Drop Stored Procedure**
+
+----
+
+# Stored Procedure with Input Parameter
+- A stored routine can perform a calculation that transforms an input value into an output value.
+- Stored procedures can take an input value and then use it in the query, or queries, written in the body of the procedure
+  - This value is represented by the IN parameter
+  - After that calculation is ready, a result will be returned
+
+- Stored Procedure with Input Parameter
+  - Create Procedure with In Parameter 
+```
+USE EMPLOYEES;
+DROP PROCEDURE IF EXISTS EMP_SALARY;
+DELIMITER $$
+USE EMPLOYEES $$
+CREATE PROCEDURE EMP_SALARY (IN P_EMP_NO INTEGER)
+BEGIN 
+SELECT E.FIRST_NAME , E.LAST_NAME, S.SALARY, S.FROM_DATE, S.TO_DATE     
+FROM EMPLOYEES E JOIN SALARIES S ON E.EMP_NO = S.EMP_NO  
+WHERE E.EMP_NO = P_EMP_NO; 
+END $$  
+DELIMITER ;
+```
+
+- Click the button to run the stored procedure
+- Enter the employee number and click Execute
+
+- Displayed  the result in a new tab
+- Alternate Way to Call Procedure 
+```CALL EMP_SALARY (11300);```
+
+----
+# Procedure with Input Parameter and Agg Functions 
+- The procedure with Average Salary 
+```
+USE EMPLOYEES;
+DROP PROCEDURE IF EXISTS EMP_AVG_SALARY;
+DELIMITER $$
+USE EMPLOYEES $$
+CREATE PROCEDURE EMP_AVG_SALARY (IN P_EMP_NO INTEGER)
+BEGIN 
+SELECT E.FIRST_NAME , E.LAST_NAME, AVG(S.SALARY)    
+FROM EMPLOYEES E JOIN SALARIES S ON E.EMP_NO = S.EMP_NO  
+WHERE E.EMP_NO = P_EMP_NO
+GROUP BY E.EMP_NO ;  
+END $$  
+DELIMITER ;
+```
+- Execute  Procedure 
+```CALL EMP_AVG_SALARY (11300);```
+
+----
+
+# Procedure with Input and Output Parameter 
+---
+- Every time you create a procedure containing both an IN and an OUT parameter, remember that you must use the SELECT-INTO structure in the query of this object’s body
+  - Create Procedure with Out Parameter
+```
+USE EMPLOYEES;
+DROP PROCEDURE IF EXISTS EMP_AVG_SALARY_OUT;
+DELIMITER $$
+USE EMPLOYEES $$
+CREATE PROCEDURE EMP_AVG_SALARY_OUT (IN P_EMP_NO INTEGER, OUT P_AVG_SALARY 
+DECIMAL (10.2))
+BEGIN 
+SELECT AVG(S.SALARY) INTO P_AVG_SALARY 
+FROM EMPLOYEES E JOIN SALARIES S ON E.EMP_NO = S.EMP_NO  
+WHERE E.EMP_NO = P_EMP_NO
+GROUP BY E.EMP_NO ;  
+END $$  
+DELIMITER ;
+```
+- Click the button to run the stored procedure
+- Enter the Employee number and click Execute 
+- Displaying the output in a new window 
+- Executing Procedure Alternate Way 
+```CALL EMP_AVG_SALARY_OUT (11300, @P_AVG_SALARY);```
+```select @P_AVG_SALARY as avg_sal;```
+
+# Example 2 
+
+- Procedure to get **Emp No**  from First Name and Last Name 
+```
+USE EMPLOYEES;
+DROP PROCEDURE IF EXISTS emp_info;
+DELIMITER $$
+CREATE PROCEDURE emp_info(in p_first_name varchar(255), in p_last_name varchar(255), out p_emp_no 
+integer)
+BEGIN        
+       SELECT e.emp_no INTO p_emp_no FROM employees e    
+       WHERE e.first_name = p_first_name AND e.last_name = p_last_name;
+END$$
+DELIMITER ;
+```
+- Execute Procedure
+
+```CALL emp_info ('Parto', 'Bamford',@p_emp_no);```
+```SELECT @p_emp_no as emp_no;```
+
+----
+# Variables
+- The input value you insert is typically referred to as the ‘argument’, ***while the obtained output value is stored in a ‘variable’***
+- Declare a variable in MySQL with the help of the ***SELECT*** and ***SET*** command. Before declaring a variable we need to prefix the symbol ***‘@’***
+
+- Syntax 
+```SELECT @ yourVariableName;```
+
+- We can set some value to the variable with the help of the SET command.
+- Syntax 
+```SET @yourVariableName=value;```
+----
+# Variables- Example 1 
+
+- Create Variable p_avg_salary 
+```SET @p_avg_salary =0;```
+
+- Call Procedure - EMP_AVG_SALARY_OUT 
+```CALL employees.EMP_AVG_SALARY_OUT (11300, @p_avg_salary);```
+
+- Display the Output Result 
+```select @p_avg_salary;```
+
+```SET @v_emp_no = 0;```
+```CALL emp_info('Aruna', 'Journel', @v_emp_no);```
+```SELECT @v_emp_no;```
+
+----
+
+# FUNCTIONS
+- Although there are no OUT parameters, there is a ‘return value’
+- It is obtained after running the query contained in the body of the function
+- we cannot call a function
+- we can select it, indicating an input value within parentheses
+
+
+- Example - 1
+```
+USE employees;
+DROP FUNCTION IF EXISTS f_emp_avg_salary;
+DELIMITER $$
+CREATE FUNCTION f_emp_avg_salary (p_emp_no INTEGER) RETURNS DECIMAL (10,2)
+DETERMINISTIC NO SQL READS SQL DATA 
+BEGIN 
+DECLARE v_avg_salary DECIMAL (10,2);
+SELECT AVG(s.salary) INTO v_avg_salary FROM employees e 
+JOIN salaries s ON e.emp_no = s.emp_no
+WHERE e.emp_no = p_emp_no;RETURN v_avg_salary;
+END $$
+DELIMITER ;
+```
+- Execute Function –Option -1 
+```SELECT f_emp_avg_salary (11300) as AVG_SAL;```
+
+- Execute Function –Option -2
+  - Click the button to run the Functions
+
+  - Enter the Employee number and click Execute 
+
+---
+# Example -2
+```
+USE employees;
+DROP FUNCTION IF EXISTS emp_info;
+DELIMITER $$
+CREATE FUNCTION emp_info(p_first_name varchar(255), p_last_name varchar(255)) 
+RETURNS decimal(10,2)
+DETERMINISTIC NO SQL READS SQL DATA
+BEGIN                
+DECLARE v_max_from_date date;      
+DECLARE v_salary decimal(10,2);
+SELECT  MAX(from_date) INTO v_max_from_date  FROM  employees e  
+JOIN salaries s ON e.emp_no = s.emp_no 
+WHERE e.first_name = p_first_name  AND e.last_name = p_last_name;
+SELECT  s.salary INTO v_salary FROM employees e  
+JOIN  salaries s ON e.emp_no = s.emp_no 
+WHERE   e.first_name = p_first_name   AND e.last_name = p_last_name
+ AND s.from_date = v_max_from_date;        
+         RETURN v_salary;                 
+END$$
+DELIMITER ;
+```
+- Execute Function 
+```SELECT EMP_INFO('Aruna', 'Journel') as salary;```
+
+----
+# Difference Functions and Procedure
+- if you need to obtain more than one value as a result of a calculation, you are better off using a procedure.
+- if you need just one value to be returned, then you can use a function.
+
+----
 
