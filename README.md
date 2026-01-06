@@ -1360,4 +1360,46 @@ DELIMITER ;
 - if you need just one value to be returned, then you can use a function.
 
 ----
+# RDBMS Keys
+
+- Super Key
+- Candidate Key 
+- Primary Key 
+- Secondary Key(Alternate Keys)
+- Unique Keys
+- Composite Key
+- Foreign Key 
+
+----
+
+# Super Key
+- **Super Key** - Super Key is the superset of primary key. The super key contains a set of attributes, including the primary key, which can uniquely identify any data row in the table
+
+----
+# Candidate Key
+- **Candidate Key** - The candidate keys in a table are defined as the set of keys that is minimal and can uniquely identify any data row in the table
+----
+# Primary Key
+- **Primary Key** - The primary key is selected from one of the candidate keys and becomes the identifying key of a table. 
+- It can uniquely identify any data row in the table.
+
+----
+
+# Secondary Key (Alternate Keys)
+- **Secondary Key** - Only one of the candidate keys is selected as the primary key. The rest of them are known as secondary keys.
+
+----
+# Unique Key
+- SSN does not accept null values, unique keys can have null values, so it is not considered as the unique key
+
+----
+
+# Composite Key
+- Composite Key -  If any single attribute of a table is not capable of being the key i.e it cannot identify a row uniquely, then we combine two or more attributes to form a key. This is known as a composite key.
+
+----
+
+# Foreign Keys
+- Foreign Key - A foreign key is an attribute value in a table that acts as the primary key in another table. Hence, the foreign key is useful in linking together two tables. Data should be entered in the foreign key column with great care, as wrongly entered data can invalidate the relationship between the two table
+
 
