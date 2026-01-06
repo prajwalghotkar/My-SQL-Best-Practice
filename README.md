@@ -1333,6 +1333,8 @@ DELIMITER ;
 
 ```SELECT @v_emp_no;```
 
+- Please refer to the Procedure and Variables.sql file for better understanding.
+
 ----
 
 # FUNCTIONS
@@ -1419,6 +1421,7 @@ DELIMITER ;
 - if you need to obtain more than one value as a result of a calculation, you are better off using a procedure.
 - if you need just one value to be returned, then you can use a function.
 
+- Please refer to the Function.sql file for better understanding.
 ----
 # RDBMS Keys
 
