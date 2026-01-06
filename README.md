@@ -1374,32 +1374,44 @@ DELIMITER ;
 
 # Super Key
 - **Super Key** - Super Key is the superset of primary key. The super key contains a set of attributes, including the primary key, which can uniquely identify any data row in the table
+<img width="1236" height="620" alt="Screenshot 2026-01-07 002600" src="https://github.com/user-attachments/assets/294ad479-1b10-4b24-97c9-01b5737bbdf1" />
 
 ----
 # Candidate Key
 - **Candidate Key** - The candidate keys in a table are defined as the set of keys that is minimal and can uniquely identify any data row in the table
+<img width="1218" height="644" alt="Screenshot 2026-01-07 002711" src="https://github.com/user-attachments/assets/bf9c8347-75e0-4a24-8dde-36a2846363b4" />
+
 ----
 # Primary Key
 - **Primary Key** - The primary key is selected from one of the candidate keys and becomes the identifying key of a table. 
 - It can uniquely identify any data row in the table.
+<img width="1210" height="567" alt="Screenshot 2026-01-07 002758" src="https://github.com/user-attachments/assets/60b7f7fd-f38d-4e52-b40c-83aafa0b70a7" />
+
 
 ----
 
 # Secondary Key (Alternate Keys)
 - **Secondary Key** - Only one of the candidate keys is selected as the primary key. The rest of them are known as secondary keys.
+<img width="1070" height="512" alt="Screenshot 2026-01-07 003522" src="https://github.com/user-attachments/assets/01acc5ac-64c5-4789-9df6-7234aaa9e818" />
+
 
 ----
 # Unique Key
 - SSN does not accept null values, unique keys can have null values, so it is not considered as the unique key
+<img width="1221" height="583" alt="Screenshot 2026-01-07 003003" src="https://github.com/user-attachments/assets/8cd367b2-cb26-4c0f-91f9-00e85824f595" />
 
 ----
 
 # Composite Key
 - Composite Key -  If any single attribute of a table is not capable of being the key i.e it cannot identify a row uniquely, then we combine two or more attributes to form a key. This is known as a composite key.
 
+<img width="1175" height="552" alt="Screenshot 2026-01-07 003227" src="https://github.com/user-attachments/assets/ff3fad22-1a06-4377-93e3-a9dfce31505a" />
+
 ----
 
 # Foreign Keys
 - Foreign Key - A foreign key is an attribute value in a table that acts as the primary key in another table. Hence, the foreign key is useful in linking together two tables. Data should be entered in the foreign key column with great care, as wrongly entered data can invalidate the relationship between the two table
+
+<img width="867" height="437" alt="Screenshot 2026-01-07 003342" src="https://github.com/user-attachments/assets/173bfd54-1641-4e5f-83b0-02e3bdb214b8" />
 
 
