@@ -1146,6 +1146,7 @@ DELIMITER ;
 
 # Procedure – DROP
 - Drop Procedure- Option -1
+
 ```DROP PROCEDURE new_procedure;```
 
 - Drop Procedure- Option -2
@@ -1180,6 +1181,7 @@ DELIMITER ;
 
 - Displayed  the result in a new tab
 - Alternate Way to Call Procedure 
+
 ```CALL EMP_SALARY (11300);```
 
 ----
@@ -1199,7 +1201,9 @@ GROUP BY E.EMP_NO ;
 END $$  
 DELIMITER ;
 ```
+
 - Execute  Procedure 
+
 ```CALL EMP_AVG_SALARY (11300);```
 
 ----
@@ -1227,7 +1231,9 @@ DELIMITER ;
 - Enter the Employee number and click Execute 
 - Displaying the output in a new window 
 - Executing Procedure Alternate Way 
+
 ```CALL EMP_AVG_SALARY_OUT (11300, @P_AVG_SALARY);```
+
 ```select @P_AVG_SALARY as avg_sal;```
 
 # Example 2 
@@ -1245,9 +1251,11 @@ BEGIN
 END$$
 DELIMITER ;
 ```
+
 - Execute Procedure
 
 ```CALL emp_info ('Parto', 'Bamford',@p_emp_no);```
+
 ```SELECT @p_emp_no as emp_no;```
 
 ----
@@ -1256,25 +1264,35 @@ DELIMITER ;
 - Declare a variable in MySQL with the help of the ***SELECT*** and ***SET*** command. Before declaring a variable we need to prefix the symbol ***‘@’***
 
 - Syntax 
+
 ```SELECT @ yourVariableName;```
 
 - We can set some value to the variable with the help of the SET command.
+
 - Syntax 
+
 ```SET @yourVariableName=value;```
+
 ----
+
 # Variables- Example 1 
 
 - Create Variable p_avg_salary 
+
 ```SET @p_avg_salary =0;```
 
 - Call Procedure - EMP_AVG_SALARY_OUT 
+
 ```CALL employees.EMP_AVG_SALARY_OUT (11300, @p_avg_salary);```
 
 - Display the Output Result 
+
 ```select @p_avg_salary;```
 
 ```SET @v_emp_no = 0;```
+
 ```CALL emp_info('Aruna', 'Journel', @v_emp_no);```
+
 ```SELECT @v_emp_no;```
 
 ----
@@ -1286,7 +1304,7 @@ DELIMITER ;
 - we can select it, indicating an input value within parentheses
 
 
-- Example - 1
+# Example - 1
 ```
 USE employees;
 DROP FUNCTION IF EXISTS f_emp_avg_salary;
@@ -1302,6 +1320,7 @@ END $$
 DELIMITER ;
 ```
 - Execute Function –Option -1 
+
 ```SELECT f_emp_avg_salary (11300) as AVG_SAL;```
 
 - Execute Function –Option -2
